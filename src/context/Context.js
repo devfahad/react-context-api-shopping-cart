@@ -32,6 +32,7 @@ const Context = ({children}) => {
     };
 
     // Creating Reducers
+    // useReducer hook returns an array of 2 elements, (state & dispatch method)
     const [state, dispatch] = useReducer(cartReducer, initialCartState);
 
     const [productState, productDispatch] = useReducer(
@@ -48,6 +49,8 @@ const Context = ({children}) => {
 
 export default Context;
 
+// In order to use the Context in a child component, we need to access it using the useContext Hook.
+// useContext hook is doing the consumer role here.
 export const CartState = () => {
     return useContext(Cart);
 };
